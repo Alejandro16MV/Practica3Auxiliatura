@@ -2,28 +2,28 @@ import self from "../img/perfil.jpg"
 export let colors = ['#004E9A', ' #428CD4'];
 
 export const info = {
-    firstName: "Edson Olmedo",
-    lastName: "Smith",
-    position: "a Full Stack Developer",
+    firstName: "SEMINARIO DE SISTEMAS",
+    lastName: "SIS-719",
+    position: "a systems engineering student",
     selfPortrait: self,
     gradient: `-webkit-linear-gradient(135deg, ${colors})`, 
     baseColor: colors[0],
     miniBio: [ 
         {
-            emoji: '🥗',
-            text: 'fueled by salad'
+            emoji: '🍕',
+            text: 'Pizza planeta'
         },
         {
             emoji: '🌎',
-            text: 'based in the Bolivia'
+            text: 'Con sede en la ciudad de Potosi'
         },
         {
-            emoji: "💼",
-            text: "Software systems engineer"
+            emoji: "👨‍💻",
+            text: "Estudiante de Ingenieria de Sistemas"
         },
         {
             emoji: "📧",
-            text: "olmedito.90@gmail.com"
+            text: "sis719@gmail.com"
         }
     ],
     socials: [

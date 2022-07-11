@@ -6,8 +6,9 @@ import EmojiBullet from "./EmojiBullet";
 import SocialIcon from "./SocialIcon";
 import {Box} from "@mui/material";
 import {info} from "../../info/Info";
+import PropTypes from 'prop-types';
 
-export default function Home() {
+export default function Home({nombre,camBio,bio}) {
 
    return (
       <Box component={'main'} display={'flex'} flexDirection={{xs: 'column', md: 'row'}} alignItems={'center'}
@@ -16,11 +17,13 @@ export default function Home() {
               height={{xs: '35vh', md: '40vh'}}
               borderRadius={'50%'} p={'0.90rem'} mb={{xs: '1rem', sm: 0}} mr={{xs: 0, md: '2rem'}}/>
          <Box>
-            <h1>Hi, I'm <span style={{background: info.gradient, webkitBackgroundClip: 'text', webkitTextFillColor: 'transparent'}}>{info.firstName}</span><span className={Style.hand}>🤚</span>
+            <h1> Hi, I'm <span style={{background: info.gradient, webkitBackgroundClip: 'text', webkitTextFillColor: 'transparent'}}>{nombre || info.firstName}</span><span className={Style.hand}>🤚</span>
             </h1>
             <h2>I'm {info.position}.</h2>
             <Box component={'ul'} p={'0.8rem'}>
-               {info.miniBio.map(bio => (
+               {camBio ? bio.map(bio => (
+                  <EmojiBullet emoji={bio.emoji} text={bio.text}/>
+               )) : info.miniBio.map(bio => (
                   <EmojiBullet emoji={bio.emoji} text={bio.text}/>
                ))}
             </Box>
@@ -33,3 +36,7 @@ export default function Home() {
       </Box>
    )
 }
+
+Home.propTypes = {
+   nombre: PropTypes.string,
+};
